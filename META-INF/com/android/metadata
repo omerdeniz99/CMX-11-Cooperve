@@ -1,0 +1,3 @@
+post-build=Samsung/carbon_cooperve/cooperve:4.4.4/KTU84Q/eng.rom-pacme.20150118.005914:userdebug/test-keys
+post-timestamp=1421553859
+pre-device=cooperve

@@ -1,0 +1,55 @@
+<mixer>
+  <path name="defaults">
+    <ctl name="Speaker Playback Volume" id="0" value="0" />
+    <ctl name="Speaker Playback Volume" id="1" value="0" />
+    <ctl name="Speaker Playback Switch" id="0" value="0" />
+    <ctl name="Speaker Playback Switch" id="1" value="0" />
+    <ctl name="Mic Capture Volume" value="0" />
+    <ctl name="Mic Capture Switch" value="0" />
+    <ctl name="Earpiece Playback Volume" value="0" />
+    <ctl name="Earpiece Playback Switch" value="0" />
+    <ctl name="Headset Playback Volume" id="0" value="0" />
+    <ctl name="Headset Playback Volume" id="1" value="0" />
+    <ctl name="Headset Playback Switch" id="0" value="0" />
+    <ctl name="Headset Playback Switch" id="1" value="0" />
+    <ctl name="BTHeadset Volume" value="0" />
+    <ctl name="BTHeadset Switch" value="0" />
+    <ctl name="PCM Playback Route" id="0" value="0" />
+    <ctl name="PCM Playback Route" id="1" value="0" />
+  </path>
+
+  <path name="earpiece">
+    <ctl name="Earpiece Playback Switch" value="1" />
+    <ctl name="Earpiece Playback Volume" value="5" />
+  </path>
+
+  <path name="headset">
+    <ctl name="Headset Playback Volume" id="0" value="15" />
+    <ctl name="Headset Playback Volume" id="1" value="15" />
+    <ctl name="Headset Playback Switch" id="0" value="1" />
+    <ctl name="Headset Playback Switch" id="1" value="1" />
+  </path>
+
+  <path name="sco">
+    <ctl name="BTHeadset Switch" value="1" />
+    <ctl name="BTHeadset Volume" value="40" />
+  </path>
+
+  <path name="speaker">
+    <ctl name="Speaker Playback Volume" id="0" value="15" />
+    <ctl name="Speaker Playback Volume" id="1" value="15" />
+    <ctl name="Speaker Playback Switch" id="0" value="1" />
+    <ctl name="Speaker Playback Switch" id="1" value="1" />
+  </path>
+
+  <path name="main-mic">
+    <ctl name="Mic Capture Volume" value="5" />
+    <ctl name="Mic Capture Switch" value="0" />
+  </path>
+
+  <path name="main-mic-off">
+    <ctl name="Mic Capture Volume" value="0" />
+    <ctl name="Mic Capture Switch" value="1" />
+  </path>
+
+</mixer>

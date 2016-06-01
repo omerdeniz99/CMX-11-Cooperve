@@ -1,0 +1,40 @@
+#!/system/bin/sh
+# get_macaddrs (CyanogenMod)
+# by psyke83
+#
+# This script will read the MAC addresses from Samsung's RIL.
+
+btsoftmac="/data/.nvmac_bt.info"
+wifisoftmac="/data/misc/wifi/.nvmac.info"
+
+unset WIFIMAC
+unset BTMAC
+
+# Skip processing if MAC addresses are already written
+if [ -f "$btsoftmac" -a -f "$btsoftmac" ]; then
+echo "Warning: MAC addresses already found."
+fi
+
+# Wait until Samsung's RIL announces MAC addresses
+until [ $(expr length "$WIFIMAC") == 17 ]; do
+WIFIMAC=`getprop ril.wifi_macaddr`
+done
+
+until [ $(expr length "$BTMAC") == 12 ]; do
+BTMAC=`getprop ril.bt_macaddr`
+done
+
+# Set WiFi MAC address
+echo $WIFIMAC >$wifisoftmac
+busybox chmod 644 $wifisoftmac
+
+# Convert BT MAC address to proper format
+BTMAC=$(echo $BTMAC | sed 's!^M$!!;s!\-!!g;s!\.!!g;s!\(..\)!\1:!g;s!:$!!')
+echo $BTMAC >$btsoftmac
+busybox chmod 644 $btsoftmac
+setprop ro.bt.bdaddr_path "$btsoftmac"
+
+echo "Bluetooth MAC address : $BTMAC (exported to: $btsoftmac)"
+echo "WiFi MAC address      : $WIFIMAC (exported to: $wifisoftmac)"
+
+exit
